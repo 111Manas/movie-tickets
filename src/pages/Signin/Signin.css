@@ -1,0 +1,34 @@
+.signin-form{
+  width: 300px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,4);
+  background: yellow;
+  padding:20px 20px 40px 20px;
+  margin: 100px auto;
+  border-radius:60px 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.signin-form h1{
+  color:#1c8adb;
+}
+.signin-container{
+  width: 100%;
+  height: 100%;
+
+}
+.input-box{
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #999;
+  outline: none;
+}
+.p{
+  margin: 20px 0 0 0;
+}
+.signup{
+  color:#232323;
+  font-size: 20px;
+}
