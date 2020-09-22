@@ -1,6 +1,7 @@
-.signup-page{
-  width: 100%;
-  height: 100%;
+.signup-wrapper{
+  margin: 0 auto;
+  padding: 0 4px 2px 4px;
+  height: 600px;
 }
 .header{
   background: #3b5998;
@@ -15,11 +16,7 @@
   width: 100%;
   font-family: Helvetica, Arial, sans-serif;
 }
-.signup-wrapper{
-  margin: 0 auto;
-  padding: 0 4px 2px 4px;
-  height: 600px;
-}
+
 .signup-container{
   margin: 0 auto;
   padding-top: 10px;
@@ -131,7 +128,7 @@
   justify-content: center;
 }
 .login-wrapper1{
-  padding: 6px;
+  padding: 6px 6px 10px 6px;
 }
 .columns1{
   display: flex;
@@ -158,6 +155,9 @@
   flex: 1;
   min-width: 0;
   width: 0;
+}
+.footer-address{
+  padding: 10px;
 }
 .facebook1{
   font-size: 13px;
