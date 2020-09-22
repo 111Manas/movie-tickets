@@ -1,29 +1,42 @@
 import React,{useState} from 'react';
 import './Signin-page.css';
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {signUpStart} from '../../Redux/User/user-action';
+import {auth,createUserProfileDocument} from '../../firebase/firebase';
 
   const Signin = () => {
-  const [userCredentials,setUserCredentials] =useState({displayName:'',
-  email:'',
-  password:''})
+  const [userCredential,setUserCredential] = useState({
+    email:'',
+    password:''
+  })
 
-   const handleChange = (event) =>{
+  const handleChange = (event) =>{
     const {name,value} = event.target;
 
-    setUserCredentials({...userCredentials, [name]:value});
+    setUserCredential({...userCredential, [name]:value});
   };
 
   
-  const {email,password,displayName} = userCredentials;
- 
-   const handleSubmit = async event =>{
+  const{email,password} = userCredential;
+
+  const handleSubmit = async event =>{
     event.preventDefault();
-    
+
+    try{
+      const {user} = await auth.createUserWithEmailAndPassword(email,password);
+
+      await createUserProfileDocument(user,{password});
+      setUserCredential({
+        displayName:'',
+        email:'',
+        password:''
+      });
+      alert('Something went wrong')
+    }catch(error){
+      console.log(error)
+    }
   
   };
-  
+
   return(
     <>
       <div className="signin-page">
@@ -116,11 +129,6 @@ import {signUpStart} from '../../Redux/User/user-action';
      </div>
    </>
   )
-  
 }
 
-const mapDispatchToProps = (dispatch) =>({
-  signUpStart:(userCredentials)=>dispatch(signUpStart(userCredentials))
-})
-
-export default connect(null,mapDispatchToProps)(Signin);
+export default Signin;

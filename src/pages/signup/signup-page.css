@@ -1,7 +1,6 @@
 .signup-page{
   width: 100%;
   height: 100%;
-  align-items: center;
 }
 .header{
   background: #3b5998;
@@ -13,7 +12,7 @@
   font-size: 17px;
   color: #fff;
   box-sizing: border-box;
-  width: 100%;
+  
   font-family: Helvetica, Arial, sans-serif;
 }
 .signup-wrapper{
@@ -113,4 +112,54 @@
 }
 .link-names{
   text-decoration: none;
+}
+
+/* login--footer */
+.login-footer1{
+  padding: 18px;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.login-wrapped1{
+  width: 450px;
+  padding: 0 20px 40px 20px ;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.login-wrapper1{
+  padding: 6px;
+}
+.columns1{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.col11{
+  flex: 1;
+  min-width: 0;
+  width: 0;
+}
+.a-font1{
+  font-weight: bold;
+  font-size: 12px;
+  /* line-height: 16px; */
+  color: #90949c;
+}
+.a1{
+  font-size: 12px;
+  /* line-height: 16px; */
+  color: #576b95;
+}
+.col21{
+  flex: 1;
+  min-width: 0;
+  width: 0;
+}
+.facebook1{
+  font-size: 13px;
+  padding-top: 10px;
+  color: gray;
 }

@@ -1,12 +1,12 @@
-.homepage1{
-  width: 100%;
-  height: 100%;
-  font-size: 19px;
-  align-items: center;
-  font-family: houschka-rounded, sans-serif;;
+.body{
+  width: 500px;
+  height: 550px;
+  margin: 20px auto;
+  font-size: 18px;
+  font-family: houschka-rounded, sans-serif;
 }
 .header1{
-  padding: 30px 30px 10px 30px;
+  padding: 10px 50px 10px 50px;
   margin: 0 auto 10px auto;
 }
 .header-container1{
@@ -21,6 +21,7 @@
   height: 30px;
   width: 265px;
 }
+
 .body-container{
   margin: 0 auto;
   align-items: center;
@@ -28,19 +29,21 @@
 h1{
   font-size: 1.78947rem;
   margin: 0;
-  padding:0 30px;
+  padding:0 20px;
 }
 p{
-  margin-top: 30px;
-  padding: 0 30px;
+  margin-top: 25px;
+  padding: 0 25px;
   text-align: left;
   justify-content: center;
 }
 .formbox2{
-  padding: 45px 30px 30px;
+  padding: 20px 30px 30px;
   margin: 0 auto ;
   align-items: center;
- 
+}
+.formbox-container2{
+  padding-bottom: 15px;
 }
 .formbox-input2{
   text-align: center;
@@ -50,6 +53,11 @@ p{
   font-weight: 600;
   line-height: 23px;
   color: black;
+}
+.formbox-input3{
+  padding-top: 15px;
+  display: block;
+  text-align: center;
 }
 .inputbox3{
   border-radius: 30px 30px;
@@ -63,41 +71,30 @@ p{
   width: 100%;
   outline: none!important;
 }
-.formbox-input3{
-  padding-top: 20px;
-  display: block;
-  text-align: center;
-}
 .formbutton-container{
   justify-content: center;
   align-items: center;
-  margin: 10px 140px;
 }
-.btn-primary{
+.form-button{
+  padding: 0 120px;
+}
+.btn-box{
+  height: 60px;
   background: linear-gradient(90deg, #c7081f 0%, #ec5700 100%);
   color: white;
   font-weight:300;
   box-shadow: 0 15px 30px 0;
-  height: 60px;
+  border-radius: 30px 30px;
+  text-align: center;
+  border-style: none;
+  z-index: 1;
+  line-height: 23px;
+  width: 100%;
   padding: 0 20px;
   cursor: pointer;
   transition: all 0.3s;
-  border-radius: 30px;
   font-size: 1.15789rem;
-  text-align: center;
   text-decoration: none;
-  border: none;
-}
-.form-image{
-  max-width: 350px;
-  width: 100%;
-  height: auto;
-  z-index: -1;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  top: 310px;
-  opacity: 0.5;
 }
 .signin-link4{
   margin: 0 auto;

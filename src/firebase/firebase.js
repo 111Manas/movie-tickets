@@ -3,14 +3,14 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAhmsPMdoWTrFB2AozeINi0TvvyUUswBQw",
-  authDomain: "facebuuk-px.firebaseapp.com",
-  databaseURL: "https://facebuuk-px.firebaseio.com",
-  projectId: "facebuuk-px",
-  storageBucket: "facebuuk-px.appspot.com",
-  messagingSenderId: "886944728418",
-  appId: "1:886944728418:web:72e9b7a1ebe6d9ce8e583b",
-  measurementId: "G-83WTN11B45"
+  apiKey: "AIzaSyAjwckANhgHR2Si53872Pa_rzHX9Oz0UNo",
+  authDomain: "facebouk-2233d.firebaseapp.com",
+  databaseURL: "https://facebouk-2233d.firebaseio.com",
+  projectId: "facebouk-2233d",
+  storageBucket: "facebouk-2233d.appspot.com",
+  messagingSenderId: "1089303638520",
+  appId: "1:1089303638520:web:877ddfe462e13d1fa2260d",
+  measurementId: "G-WMJ8HRSCYQ"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

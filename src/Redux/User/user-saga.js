@@ -1,61 +1,22 @@
-import UserActionTypes from './user-types';
-import {all,call,put,takeLatest} from 'redux-saga/effects';
-import { signInSuccess,signInFailure,signUpSuccess,signUpFailure } from './user-action';
-import {auth,createUserProfileDocument} from '../../firebase/firebase';
+  font-size: 19px;
+  align-items: center;
 
-export function* getSnapshotFromUserAuth(userAuth, additionalData) {
-  try {
-    const userRef = yield call(
-      createUserProfileDocument,
-      userAuth,
-      additionalData
-    );
-    const userSnapshot = yield userRef.get();
-    yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
-  } catch (error) {
-    yield put(signInFailure(error));
+
+  <div className='form-image'>
+              <img src='https://www.lovecalculator.com/dist/images/lovecalculator-heart.svg'  alt='Loves' />
+              </div>
+  .img-container{
+    padding-top:10px;
   }
-}
-
-export function* signInWithEmail({ payload: { email, password } }) {
-  try {
-    const { user } = yield auth.signInWithEmailAndPassword(email, password);
-    yield getSnapshotFromUserAuth(user);
-  } catch (error) {
-    yield put(signInFailure(error));
+  .form-image{
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0;
+    opacity: 0.5;
   }
-}
 
-export function* signUp({ payload: { email, password, displayName } }) {
-  try {
-    const { user } = yield auth.createUserWithEmailAndPassword(email, password);
-    yield put(signUpSuccess({ user, additionalData: { displayName } }));
-  } catch (error) {
-    yield put(signUpFailure(error));
-  }
-}
-
-export function* signInAfterSignUp({ payload: { user, additionalData } }) {
-  yield getSnapshotFromUserAuth(user, additionalData);
-}
-
-export function* onEmailSignInStart() {
-  yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmail);
-}
-
-export function* onSignUpStart() {
-  yield takeLatest(UserActionTypes.SIGN_UP_START, signUp);
-}
-
-export function* onSignUpSuccess() {
-  yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, signInAfterSignUp);
-}
-
-
-export function* userSagas(){
-  yield all([
-    call(onSignUpStart),
-    call(onSignUpSuccess),
-    call(onEmailSignInStart)
-  ])
-}
