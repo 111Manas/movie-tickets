@@ -20,8 +20,8 @@ const Signup = () => {
   return (
     <>
       <div className="signup-page">
-        <div className="header">Join Facebook</div>
         <div className="signup-wrapper">
+        <div className="header">Join Facebook</div>
           <div className="signup-container">
             <div className="signup-header1">
               <span className="signup-header-name1">
