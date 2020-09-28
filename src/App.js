@@ -1,22 +1,51 @@
 import React from 'react';
-import Signin from './pages/Signin/Signin-page';
-import Signup from './pages/signup/signup-page';
-import Homepage from './pages/homepage/homepage'
-import {Switch,Route} from 'react-router-dom';
+import './App.css'
+import {Switch,Route,Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
+import Header from './clothing/Header/Header';
+
+import {selectCurrentUser} from './redux/User/user.selectors';
+import {checkUserSession} from './redux/User/user.action';
+import HomePage from './clothing/homepage/HomePage';
+import ShopPage from './clothing/shoppage/ShopPage';
+import CheckoutPage from './clothing/checkout-page/checkout';
+import SignInAndSignUpPage from './clothing/Sign-In-and-Sign-Up/sign-in-and-sign-up';
+
 
 class App extends React.Component{
-  render(){
+
+render(){
+  const {currentUser}= this.props;
 
   return (
     <div>
+      <Header />
       <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route  path='/signup' component={Signup} />
-        <Route exact path='/signin' component={Signin} />
+            <Route exact path='/' component={HomePage} />
+            <Route path='/shop' component={ShopPage} />
+            <Route exact path='/checkout' component={CheckoutPage} />
+            <Route
+              exact
+              path='/signin'
+              render={() =>
+                currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />
+              }
+            />
       </Switch>
     </div>
-  )
-}
-}
+  );
+}};
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  checkUserSession: () => dispatch(checkUserSession())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
