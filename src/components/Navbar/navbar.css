@@ -1,0 +1,133 @@
+.navbars{
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.navbar-container{
+  width: 100%;
+  height: 80px;
+  background: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+}
+.navbar-logo{
+  width: 50%;
+}
+.logo{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-decoration: none;
+  justify-self: start;
+}
+.nav-menu{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  text-align: center;
+  justify-self: end;
+}
+.menu-icon{
+  display: none;
+}
+.nav-inline-item{
+  height: 80px;
+  border-bottom: 2px solid transparent;
+}
+.nav-inline-item:hover{
+  border-bottom: 2px solid #f00946;
+}
+.nav-links{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+.buttom{
+  width: 10vw;
+  height: 44px;
+  font-size: 20px;
+  background: rgb(39, 39, 221);
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #999; 
+}
+.buttom:hover{
+  color: #1c1c1c;
+  background-color: #fff;
+}
+@media screen and (max-width:960px){
+  .NavbarItems {
+    position: relative;
+  }
+  .nav-menu{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 90vh;
+    position: absolute;
+    top: 90px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  .nav-menu.active {
+    background:black;
+    left: 0;
+    opacity: 1;
+    transition: all 0.6s ease;
+    z-index: 100;
+  }
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+  .nav-links:hover {
+    color: #f00946;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+  .nav-item{
+    width: 100%;
+    height: 120px;
+  }
+  .nav-item:hover{
+    border: none;
+  }
+  .logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%,40%);
+  }
+  .menu-icon{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%,30%);
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  .nav-btm{
+    width:100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+}

@@ -1,0 +1,20 @@
+.film-page{
+  background-color: #151c26;
+  color: #fff;
+  margin-top: 5px;
+  height:100%;
+  width: 100%;
+}
+.film-page-container{
+  padding: 0 50px;
+}
+.fa-arrow-alt-circle-right{
+  color:yellow;
+  font-size: 60px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.fa-arrow-alt-circle-right:hover{
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
