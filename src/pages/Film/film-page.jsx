@@ -126,7 +126,7 @@ function FilmPage() {
             <RBCarousel
               autoplay={true}
               pauseOnVisibility={true}
-              slidesshowSpeed={7000}
+              slidesshowSpeed={5000}
               version={4}
               indicators={true} 
             >
